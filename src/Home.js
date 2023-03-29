@@ -1,5 +1,7 @@
 import ReverseGeo from './components/reverseGeo';
+import Footer from './Footer';
 import { useRef } from 'react';
+import React, { useState } from "react";
 import Nav from '../src/components/Navbar';
 import img1 from './img/woman-washing-her-car-outside1 - Copy.jpg'
 import img2 from './img/car-wash-detailing-station.jpg'
@@ -15,6 +17,8 @@ export default function HomeApp() {
   const myRef = useRef(null);
   const myRef2 = useRef(null);
   const myRef3 = useRef(null);
+  const [val, setVal] = useState("");
+ 
 
   return (<>
     <div className='My_app'>
@@ -27,16 +31,15 @@ export default function HomeApp() {
               <p style={{ fontSize: ".9em", color: "#ffff" }}>Get Best experience here.</p>
             </div>
             <ReverseGeo />
-
-            {/* <Location/> */}
-            <input className="inNumber" type={Number} placeholder='Enter Mobile Number :' id="UserNumber" />
+            <input className="inNumber" type={Number} size='10' placeholder='Enter Mobile Number :' id="UserNumber"  pattern="[0-9]*"  value={val} onChange={(e) =>
+    setVal((v) => (e.target.validity.valid ? e.target.value : v))}/>
             <button className="btn-gotoplans" id="btn-plans" >Check Price</button>
           </form>
         </div>
         <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>
         <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p></div>
 
-      <div className='webV4' style={{ width: "100%", height: "600px" }}></div>
+      <div className='webV4' style={{ width: "100%", height: "200px" }}></div>
       <div className='Articles1'>
         <p className='articles_p' >With <b style={{ color: "rgb(80, 234, 80)" }}>GO</b><b style={{ color: "rgb(0, 128, 255)" }}>WASH</b><b style={{ color: "red" }}>E</b>
           , you can
@@ -55,7 +58,8 @@ export default function HomeApp() {
         <p className='design' style={{ fontSize: "2em", marginTop: "90px", marginBottom: "30px", fontWeight: "400" }}>Our Approach</p>
       </div>
       <div className='service_section'>
-        <p className='articles_p' id='doorstep_content' style={{ padding: "80px" }}><p   onClick={() => myRef.current.scrollIntoView()} style={{ display: "inline-block", color: "#979797", textDecoration: "none" }} className="design2">Doorstep Car Wash -</p>  Book your car wash from the comfort of your home and get our washing
+        <p className='articles_p' id='doorstep_content' style={{ paddingTop: "80px" ,paddingBottom:"80px"}}>
+          <p   onClick={() => myRef.current.scrollIntoView()} style={{ display: "inline-block", color: "#979797", textDecoration: "none" }} className="design2">Doorstep Car Wash -</p>  Book your car wash from the comfort of your home and get our washing
           professional at your doorstep within minutes. We also provide monthly and hassle free
           subscriptions for your car wash.We provide complete car wash and detailing service for all
           models of high-end vehicles including sedans, MUVs, 5-seater SUVs, and 7-seater SUVs.<br /><br />
@@ -70,7 +74,7 @@ export default function HomeApp() {
       </div>
       {/* <ServicePage /> */}
       <div style={{background:"white"}}>
-                <Nav/>
+              
                 
                 {/* <div className='Services_container'> */}
         <h3 className='Workh'>The work we do ,<br /> and the people we help.</h3><br />
@@ -164,7 +168,7 @@ export default function HomeApp() {
                     </div>  
                 </div>
                 </div>
-                <div className='Services-content' style={{display:"block", justifyItems:"center", paddingTop:"50px"}}>
+                <div className='Services-content' style={{display:"block", justifyItems:"center", paddingTop:"50px",paddingBottom:'50px'}}>
                     <div className='images-hold3'>
                         <img src={img9} className='img3'  alt=""/>
                     </div>
@@ -175,6 +179,8 @@ export default function HomeApp() {
 
             </div>
             </div>
+            <hr></hr>
+            <Footer/>
     </div>
 
   </>
