@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e1a6174c.css",
-    "main.js": "/static/js/main.59228d5d.js",
-    "static/media/close-up-car-care-process.jpg": "/static/media/close-up-car-care-process.22ede3d9e4f7ffe3f1a3.jpg",
-    "static/media/young-man-washing-car-carwash-station-outdoor.jpg": "/static/media/young-man-washing-car-carwash-station-outdoor.40378ecb797bcb3dc755.jpg",
-    "static/media/beautiful-car-washing-service.jpg": "/static/media/beautiful-car-washing-service.3ea41f62924b08f630fb.jpg",
-    "static/media/woman-washing-her-car-outside1 - Copy.jpg": "/static/media/woman-washing-her-car-outside1 - Copy.87df0f2ec7e09d1a9561.jpg",
-    "static/media/hybrid.jpg": "/static/media/hybrid.499bb298153b20b4b8e3.jpg",
-    "static/media/man-washing-his-car-garage.jpg": "/static/media/man-washing-his-car-garage.44cfb1f875813cede5f6.jpg",
+    "main.css": "/static/css/main.2e09a622.css",
+    "main.js": "/static/js/main.32f4a339.js",
     "static/media/coming-soon.jpg": "/static/media/coming-soon.debb385e61d8566b85b7.jpg",
-    "static/media/car-wash-detailing-station.jpg": "/static/media/car-wash-detailing-station.cd5a0b3974e91f3f6733.jpg",
-    "static/media/cosmetics.jpg": "/static/media/cosmetics.f143d5babdd90aed523d.jpg",
-    "static/media/chemicals.jpg": "/static/media/chemicals.c9aa7719238b0793ed9d.jpg",
+    "static/media/hybrid.jpg": "/static/media/hybrid.65b9ebdc7dcf86658d9c.jpg",
+    "static/media/young-man-washing-car-carwash-station-outdoor.jpg": "/static/media/young-man-washing-car-carwash-station-outdoor.0c4021699273db3dd6c2.jpg",
+    "static/media/woman-washing-her-car-outside1 - Copy.jpg": "/static/media/woman-washing-her-car-outside1 - Copy.d2283314bcbca4d86d1e.jpg",
+    "static/media/beautiful-car-washing-service.jpg": "/static/media/beautiful-car-washing-service.cf507cd6adfd97c41926.jpg",
+    "static/media/man-washing-his-car-garage.jpg": "/static/media/man-washing-his-car-garage.c70fd9d35e4bf788a709.jpg",
+    "static/media/cosmetics.jpg": "/static/media/cosmetics.dfdd4d8b767180ea1573.jpg",
+    "static/media/close-up-car-care-process.jpg": "/static/media/close-up-car-care-process.6cfa206b8b3043a7bac5.jpg",
+    "static/media/car-wash-detailing-station.jpg": "/static/media/car-wash-detailing-station.cb4cc2d4bf28a728e07e.jpg",
+    "static/media/chemicals.jpg": "/static/media/chemicals.2767c4b19888dccf7a9e.jpg",
     "static/media/webLogo.png": "/static/media/webLogo.036ce32bd2d31cfd29bc.png",
     "static/media/Insi.png": "/static/media/Insi.85a3e13813e473585985.png",
     "static/media/pin.png": "/static/media/pin.d21bfb0d43fff9776f1b.png",
@@ -19,11 +19,11 @@
     "static/media/phone-call.png": "/static/media/phone-call.fd7700fa7f9bba0feea9.png",
     "static/media/LI.png": "/static/media/LI.1843e023cd3333def4c6.png",
     "index.html": "/index.html",
-    "main.e1a6174c.css.map": "/static/css/main.e1a6174c.css.map",
-    "main.59228d5d.js.map": "/static/js/main.59228d5d.js.map"
+    "main.2e09a622.css.map": "/static/css/main.2e09a622.css.map",
+    "main.32f4a339.js.map": "/static/js/main.32f4a339.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1a6174c.css",
-    "static/js/main.59228d5d.js"
+    "static/css/main.2e09a622.css",
+    "static/js/main.32f4a339.js"
   ]
 }

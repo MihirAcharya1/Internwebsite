@@ -5,9 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Services from './Services';
 import Plan from './Plan';
-// import About from './About';
 import App from './App';
-import Geoloc from './components/Geo';
+import SignInSignUp from './SignInSignUp';
 
 export default function IndexApp(){
   return(
@@ -17,7 +16,7 @@ export default function IndexApp(){
           <Route index element = {<Home/>}></Route>
           <Route path='Services' element={<Services/>}></Route>
           <Route path='Plan' element={<Plan/>}></Route>
-          <Route path='About' element={<Geoloc/>}></Route>
+          <Route path='SignInSignUp' element={<SignInSignUp/>}></Route>
         </Routes>
     </BrowserRouter>
   )

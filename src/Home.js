@@ -2,6 +2,7 @@ import ReverseGeo from './components/reverseGeo';
 import Footer from './Footer';
 import { useRef } from 'react';
 import React, { useState } from "react";
+import PhoneInput from "react-phone-input-2";
 import Nav from '../src/components/Navbar';
 import img1 from './img/woman-washing-her-car-outside1 - Copy.jpg'
 import img2 from './img/car-wash-detailing-station.jpg'
@@ -12,12 +13,15 @@ import img6 from './img/close-up-car-care-process.jpg'
 import img7 from './img/man-washing-his-car-garage.jpg'
 import img8 from './img/chemicals.jpg'
 import img9 from './img/cosmetics.jpg'
+// import Plan from './Plan';
 
 export default function HomeApp() {
   const myRef = useRef(null);
   const myRef2 = useRef(null);
   const myRef3 = useRef(null);
-  const [val, setVal] = useState("");
+  
+  const [ph, setPh] = useState("");
+  
  
 
   return (<>
@@ -31,9 +35,12 @@ export default function HomeApp() {
               <p style={{ fontSize: ".9em", color: "#ffff" }}>Get Best experience here.</p>
             </div>
             <ReverseGeo />
-            <input className="inNumber" type={Number} size='10' placeholder='Enter Mobile Number :' id="UserNumber"  pattern="[0-9]*"  value={val} onChange={(e) =>
-    setVal((v) => (e.target.validity.valid ? e.target.value : v))}/>
-            <button className="btn-gotoplans" id="btn-plans" >Check Price</button>
+            <PhoneInput country={"in"} value={ph} onChange={setPh} className='PhoneNo_input' />
+
+            {/* <input className="inNumber" type={Number} placeholder='Enter Mobile Number :' id="UserNumber"  pattern="[0-9]*"  value={val} onChange={(e) =>
+    setVal((v) => (e.target.validity.valid ? e.target.value : v))}/> */}
+            <button className="btn-gotoplans" id="btn-plans" > Check Price</button>
+           
           </form>
         </div>
         <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>

@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -73,6 +74,7 @@ Link {
   display: inline-block;
   position: relative;
   padding-bottom: 5 px;
+  text-decoration: none;
 }
 
 .design3 {
@@ -296,7 +298,7 @@ Link {
 .form-container {
   /* padding-top: 90px; */
   width: 300px;
-  height: fit-content;
+  height: auto;
   float: right;
   margin-right: 50px;
   padding: 25px;
@@ -309,6 +311,11 @@ Link {
   border-left: 2px solid #01524b;
   /* backdrop-filter: blur(5px); */
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+.PhoneNo_input{
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 .fheadings {
@@ -331,8 +338,8 @@ Link {
   margin-top: 0px;
   height: 45px;
   position: absolute;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #042825;
   font-size: 16px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -344,8 +351,8 @@ Link {
 .edLocation {
   display: inline-block;
   height: 45px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   text-align: left;
@@ -419,6 +426,7 @@ Link {
   border-color: #fff;
 }
 
+
 @media screen and (max-width:450px) {
   .services-display {
     width: 100%;
@@ -429,7 +437,7 @@ Link {
   .images-hold1 {
 
     width: 100%;
-    height: 350px;
+    height: 320px;
     overflow: hidden;
     /* padding: 10px; */
     margin: 0 auto;
@@ -507,7 +515,7 @@ Link {
   .form-container {
     padding-top: 0;
     width: 80%;
-    height: 320px;
+    height: auto;
     margin-bottom: 40px;
     display: block;
 
@@ -527,6 +535,7 @@ Link {
     padding-top: 0px;
     padding-left: 20px;
     font-size: 55px;
+    text-align: start;
   }
 
   .sec1-para {
@@ -554,7 +563,7 @@ Link {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  height: 400px;
+  height: auto;
   padding: 2%;
   background-color:#042825;
   border-radius: 25px;
@@ -579,6 +588,8 @@ Link {
   padding: 10px;
   display: flex;
   margin-top: 30px;
+  transition: 0.3s all ease-in-out;
+
 }
 .input-mail{
   width: 100%;
@@ -608,8 +619,8 @@ Link {
 
 }
 .links-content{
-    width: 300px;
-    height: 200px;
+    width: 50%;
+    height: auto;
     background-color:#042825;
 }
 .footer-web-logo{
@@ -644,4 +655,385 @@ Link {
 }
 .foot-logoC{
   display: flex;
+}
+#numStyle{
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 2em;
+    color: white;
+}
+.IconsLink{
+  width: 20px;
+  margin-right: 5px;
+}
+.IconsLink1{
+  width: 30px;
+  margin-right: 5px;
+}
+.Footer-container{
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width:1260px)  {
+  .images-hold1 {
+
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    /* padding: 10px; */
+    margin: 0 auto;
+  }
+
+  .images-hold3 {
+
+    width: 100%;
+    height: 350px;
+    
+  }
+
+  .img1 {
+    width: 100%;
+    height: 300px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .img2 {
+    width: 100%;
+    height: 300px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .img3 {
+    width: 100%;
+    height: 350px;
+    transition: 0.3s all ease-in-out;
+    
+  }
+  
+  .ImageCol {
+    padding: 15px;
+    display: block;
+    justify-items: center;
+  }
+  .attached_headings {
+    /* font-size: 1.5em; */
+    width: 100%;
+  }
+
+
+}
+
+/* Footer media query */
+
+@media screen and (max-width:1080px) {
+  .foot-img-view{
+    width: 100%;
+    padding: 20px;  
+  }
+  .Footer-content{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    padding: 2%;
+    background-color:#042825;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: inline-block;
+  }
+  .Footer-container{
+    padding-bottom: 0;
+      }
+      .foot-links-content{
+        width: 100%;
+        display: inline-flexbox;
+        background-color:#042825;
+      }
+      .Email-in-join_us-btn{
+        width: 70%;
+        margin-left: 0;
+        margin-right: 0;
+        height: 80px;
+        padding: 10px;
+        display: flex;
+        margin-top: 30px;
+    transition: 0.3s all ease-in-out;
+
+      }
+      .links-container-footer{
+        
+    transition: 0.3s all ease-in-out;
+      
+      }
+      .links-content{
+    transition: 0.3s all ease-in-out;
+       
+    }
+}
+
+@media screen and (max-width:450px) {
+  .Footer-container{
+padding-bottom: 0;
+  }
+  .Footer-content{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    padding: 2%;
+    background-color:#042825;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: inline-block;
+  }
+  .foot-img-view{
+    width: 100%;
+    padding: 20px;
+   
+    
+  }
+  .foot-links-content{
+    width: 100%;
+    display: inline-flexbox;
+    background-color:#042825;
+  }
+  .Email-in-join_us-btn{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    margin-top: 30px;
+  }
+  .input-mail{
+    width: 70%;
+    height: 40px;
+    font-size: 1.1em;
+    border-radius: 30px  0 0 30px ;
+    padding-left: 20px; 
+    border: 3px solid #ffffff;
+  }
+  .joinus-foot-btn{
+    width: 30%;
+    height: 40px;
+    
+    font-size: 1.1em;
+    border: 2px solid #ffffff;
+    font-weight: bold;
+    background-color: white;
+     border-radius: 0 60px 60px 0 ;
+     color: #073e3a;
+  }
+  .links-container-footer{
+    
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    text-align: start;
+  
+  }
+  .links-content{
+      width: fit-content;
+      height: auto;
+      
+      background-color:#042825;
+  }
+  .footer-web-logo{
+    width: 180px;
+    height: 80px;
+  
+    
+  }
+  .expert{
+    font-size: 1.5em;
+    color: gray;
+    display: inline-flexbox;
+    height: 80px;
+    padding-top: 35px;
+    font-weight: bold;
+    margin-left: -15px;
+  }
+  .links-content h3{
+    text-decoration: underline;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  .links-content a{
+    color: white;
+    font-size: 1em;
+    line-height: 2em;
+    text-decoration: none;
+  }
+  .details-web{
+    color: white;
+    display: block;
+  }
+  .foot-logoC{
+    display: flex;
+  }
+  #numStyle{
+    font-size: 1.1em;
+    line-height: 2em;
+  }
+  .IconsLink{
+    width: 17px;
+    margin-right: 1px;
+  }
+  .IconsLink1{
+    width: 10px;
+    margin-right: 0px;
+  }
+
+}
+/* Plans page Css  start from here*/
+.Plans-View{
+  width: 100%;
+  background-color: #042825;
+  /* background-color: #fff; */
+  height: 100%;
+}
+/* #92FFC0
+#002661 */
+.Plans-container{
+  width:100%;
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: #08AEEA;
+  background-image: linear-gradient(0deg, #2AF598 0%,  #08AEEA 100%); */
+  /* height: 800px; */
+}
+.plans-content-view{
+  width: 300px;
+  display: inline-block;
+  height: 450px;
+  border-radius: 15px;
+   /* background-color: #08AEEA; */
+   background-color: white;
+   box-shadow: 0 10px 32px 0 rgba(31, 38, 135, .37);
+ 
+   margin: 20px;
+   text-align: center;
+  /* background-image: linear-gradient(120deg,  #2AF598 0%,  #002661  100%); */
+
+}
+.Plans-View h1{
+  color: #042825;
+  text-align: center;
+  
+  font-weight: 700;
+}
+.plans-content-view h2{
+  color: white;
+  display: inline-block;
+  background-color: #042825;
+  /* box-shadow: 0 10px 22px 0 rgba(31, 38, 135, .37); */
+transition: .4s linear;
+  padding: 10px;
+/* margin-top: 20px; */
+  font-size: 1.5em;
+  border-radius: 0 0 10px 10px;
+}
+
+.plan-desgin{
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  border-radius: 15px;
+  background-color: white;
+
+  overflow: hidden;
+  transition: 0.4s linear;
+  border: 5px solid #042825;
+  
+}
+
+.li-list{
+color:#042825;
+font-size: 1.1em;
+margin-top: 15px;
+font-weight: bold;
+text-align: start;
+padding-left: 20px;
+
+
+}
+.li-list h1{
+margin-top: 30px;
+}
+
+.btn-book{
+  width:200px;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  /* position: absolute; */
+  border: 2px solid #042825;
+  font-weight: bold;
+  margin-top: 70px;
+  background-color: #042825;
+  /* box-shadow: 0 20px 32px 0 rgba(31, 38, 135, .37); */
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.5);
+
+
+}
+
+
+
+@media screen and (max-width:1120px) {
+  .Plans-container{
+    width:100%;
+    display: inline-block;
+    justify-content: space-evenly;
+    /* background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #2AF598 0%,  #08AEEA 100%); */
+    height: 800px;
+  }
+}
+.Auth-view{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  
+  /* background-color: white; */
+}
+
+.Sign-in-up{
+  width: 100%;
+  padding: 25px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.iconshield{
+  background-color: #02a598;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  margin-top: 20px;
+  /* display: inline-block; */
+margin-left: calc(50% - 30px);
+  border-radius: 50%;
+  
+}
+.numInput{
+  color: white;
+  font-size: 1.3em ;
+  margin-top: 20px;
+  display: block;
+}
+.Phone-in{
+  margin-top: 30px;
+  font-family: 700;
 }

@@ -21,8 +21,8 @@ export const MenuData = [
         cName:"NavLinks",
     },
     {
-        title:"Sign Up",
-        url:"#",
+        title:"Sign In / Up",
+        url:"/SignInSignUp",
         cName:"SignUpbtn"
     }
 ]

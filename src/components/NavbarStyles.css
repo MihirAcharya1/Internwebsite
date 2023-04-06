@@ -72,7 +72,7 @@
 .fa-bars,.fa-times{
     color: #ffffff;
 }
-@media screen and (max-width:450px) {
+@media screen and (max-width:720px) {
     .NavbarItems{
         z-index: 99;
     }
@@ -125,7 +125,8 @@
         color: #ffffff;
         padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 35%;
-    padding-right: 35%;
+  
+    /* padding-left: 35%; */
+    /* padding-right: 35%; */
     }
 }

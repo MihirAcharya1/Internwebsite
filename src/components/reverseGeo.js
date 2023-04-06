@@ -36,7 +36,7 @@ const Geocode = () => {
         `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=fe79cd45a8884fe38483b89cc613a8af`
       );
       setInputValue(response.data.results[0].formatted);
-      
+      console.log(inputValue);
       setSuggestions([]);
     } catch (error) {
       console.log(error);
