@@ -1,6 +1,11 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import PhoneInput from "react-phone-input-2";
+
 import React, { useState, useEffect } from 'react';
 import LocationIcon from '../img/LI.png';
+// import PlaceIcon1 from '../img/pin.png';
+
 
 const Geocode = () => {
 
@@ -8,8 +13,10 @@ const Geocode = () => {
   const [lng, setLng] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [ph, setPh] = useState("");
 
-  
+
+
   useEffect(() => {
     if (navigator.geolocation) {
       const watchId = navigator.geolocation.watchPosition(
@@ -30,7 +37,7 @@ const Geocode = () => {
 
 
   // function which convert lat long to address ;
-  const handleButtonClick = async () => {
+  const handleButtonClick1 = async () => {
     try {
       const response = await axios.get(
         `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=fe79cd45a8884fe38483b89cc613a8af`
@@ -40,6 +47,8 @@ const Geocode = () => {
       setSuggestions([]);
     } catch (error) {
       console.log(error);
+      console.log(inputValue);
+
     }
   };
 
@@ -63,22 +72,38 @@ const Geocode = () => {
     setInputValue(address1);
     setSuggestions([]);
   };
-  
+
   return (
-    
-    <div style={{width:"100%"}}>
-       <input type="text" value={inputValue} onChange={handleChange}  className='edLocation' placeholder='Enter Your Location'/>
-       <button className='locBtn' onClick={handleButtonClick}><img className='locImg' src={LocationIcon} alt=""></img></button>
-      <ul className='SuggestList-container'>
-        {suggestions.map((address1, index) => (
-          <li key={index} onClick={() => handleSelect(address1)} className="SuggestList">
-            {address1}
-          </li> 
-        ))}
-      </ul>
-    
-    
-    </div>
+
+    <>
+      <div className='Form_wrap'>
+        <div className="form-container">
+          <div className="fheadings" style={{ width: "100%" }}>
+            <p style={{ fontSize: "1.5em", color: "#ffff", lineHeight: "2" ,fontWeight:"bold"}}>Book Services Now</p>
+            <p style={{ fontSize: ".9em", color: "#ffff" }}>Get Best experience here.</p>
+          </div>
+          <div style={{display:"flex",marginBottom:"15px"}}>
+          <input type="text" value={inputValue} onChange={handleChange} className='edLocation' placeholder='Enter Your Location' />
+          <button className='locBtn' onClick={handleButtonClick1}><img src={LocationIcon}  alt=''></img></button></div>
+          <ul className='SuggestList-container'>
+            {suggestions.map((address1, index) => (
+              <li key={index} onClick={() => handleSelect(address1)} className="SuggestList">
+                {address1}
+              </li>
+            ))}
+          </ul>
+          <div>
+          <PhoneInput country={"in"} value={ph} onChange={setPh} className='PhoneNo_input' />
+
+          </div>
+
+          <button className="btn-gotoplans" >  <Link to="/Plan">Check Price</Link></button>
+
+        </div>
+      </div>
+
+
+    </>
   );
 };
 

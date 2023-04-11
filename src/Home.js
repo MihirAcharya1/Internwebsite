@@ -1,48 +1,29 @@
 import ReverseGeo from './components/reverseGeo';
 import Footer from './Footer';
 import { useRef } from 'react';
-import React, { useState } from "react";
-import PhoneInput from "react-phone-input-2";
 import Nav from '../src/components/Navbar';
-import img1 from './img/woman-washing-her-car-outside1 - Copy.jpg'
-import img2 from './img/car-wash-detailing-station.jpg'
-import img3 from './img/hybrid.jpg'
-import img4 from './img/beautiful-car-washing-service.jpg'
-import img5 from './img/young-man-washing-car-carwash-station-outdoor.jpg'
-import img6 from './img/close-up-car-care-process.jpg'
-import img7 from './img/man-washing-his-car-garage.jpg'
-import img8 from './img/chemicals.jpg'
-import img9 from './img/cosmetics.jpg'
-// import Plan from './Plan';
+import img1 from './img/woman-washing-her-car-outside1 - Copy.jpg';
+import img2 from './img/car-wash-detailing-station.jpg';
+import img3 from './img/hybrid.jpg';
+import img4 from './img/beautiful-car-washing-service.jpg';
+import img5 from './img/young-man-washing-car-carwash-station-outdoor.jpg';
+import img6 from './img/close-up-car-care-process.jpg';
+import img7 from './img/man-washing-his-car-garage.jpg';
+import img8 from './img/chemicals.jpg';
+import img9 from './img/cosmetics.jpg';
+
 
 export default function HomeApp() {
   const myRef = useRef(null);
   const myRef2 = useRef(null);
   const myRef3 = useRef(null);
-  
-  const [ph, setPh] = useState("");
-  
- 
 
   return (<>
     <div className='My_app'>
       <Nav />
       <div className='Slogans'>
-        <div className='Form_wrap'>
-          <form className="form-container">
-            <div className="fheadings">
-              <p style={{ fontSize: "1.5em", color: "#ffff", lineHeight: "2" }}> <b> Book Services Now</b></p>
-              <p style={{ fontSize: ".9em", color: "#ffff" }}>Get Best experience here.</p>
-            </div>
-            <ReverseGeo />
-            <PhoneInput country={"in"} value={ph} onChange={setPh} className='PhoneNo_input' />
-
-            {/* <input className="inNumber" type={Number} placeholder='Enter Mobile Number :' id="UserNumber"  pattern="[0-9]*"  value={val} onChange={(e) =>
-    setVal((v) => (e.target.validity.valid ? e.target.value : v))}/> */}
-            <button className="btn-gotoplans" id="btn-plans" > Check Price</button>
+        <ReverseGeo/>
            
-          </form>
-        </div>
         <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>
         <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p></div>
 

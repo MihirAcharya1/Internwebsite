@@ -7,6 +7,7 @@ import Services from './Services';
 import Plan from './Plan';
 import App from './App';
 import SignInSignUp from './SignInSignUp';
+import About from './About';
 
 export default function IndexApp(){
   return(
@@ -16,6 +17,7 @@ export default function IndexApp(){
           <Route index element = {<Home/>}></Route>
           <Route path='Services' element={<Services/>}></Route>
           <Route path='Plan' element={<Plan/>}></Route>
+          <Route path='About' element={<About/>}></Route>
           <Route path='SignInSignUp' element={<SignInSignUp/>}></Route>
         </Routes>
     </BrowserRouter>

@@ -1,16 +1,19 @@
 import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
 import { CgSpinner } from "react-icons/cg";
 import Nav from './components/Navbar';
-
 import OtpInput from "otp-input-react";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "./firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { doc, setDoc  } from "firebase/firestore"; 
 import { toast, Toaster } from "react-hot-toast";
+import {db} from './firestore';
 
 const SignInSignUp = () => {
+
+  const [fname,setfname] =useState("");
   const [otp, setOtp] = useState("");
   const [ph, setPh] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,17 +26,39 @@ const SignInSignUp = () => {
         "recaptcha-container",
         {
           size: "invisible",
-          callback: (_response) => {
+          callback: (response) => {
             onSignup();
           },
           "expired-callback": () => {
-            
+            toast.dismiss("Verify mobile no. again!");
           },
         },
         auth
       );
     }
   }
+
+  async function firestoreData(){
+    try {
+      const docRef = doc(db, "users", "#"+ph+"@");
+await setDoc(docRef, {
+  fullname:fname,
+   contactno:ph,
+   address:""
+});
+    
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+  }
+  const handleChange = (event) =>{
+    const value = event.target.value;
+    setfname(value);
+  }
+
+  //Sign up function 
 
   function onSignup() {
     setLoading(true);
@@ -55,6 +80,10 @@ const SignInSignUp = () => {
         setLoading(false);
       });
   }
+  if (auth!= null) {
+    // window.location.href = '/';
+
+  }
 
   function onOTPVerify() {
     setLoading(true);
@@ -65,6 +94,7 @@ const SignInSignUp = () => {
         setUser(res.user);
         setLoading(false);
         toast.success("Login successfully!");
+        firestoreData();
 
       })
       .catch((err) => {
@@ -79,9 +109,9 @@ const SignInSignUp = () => {
 
       <div>
         <Toaster toastOptions={{ duration: 3000 }} />
-        <div id="recaptcha-container" style={{width:"500px"}}></div>
+        <div id="recaptcha-container" ></div>
         {user ? (
-      
+    
         <h2 className="text-center text-white font-medium text-2xl">
             👍Login Success 
           </h2>
@@ -125,6 +155,13 @@ const SignInSignUp = () => {
                 <div className="bg-white text-emerald-500 w-fit mx-auto p-4 rounded-full">
                   <BsTelephoneFill size={30} />
                 </div>
+                <label
+                  htmlFor=""
+                  className="font-bold text-xl text-white text-center"
+                >
+                  Enter Your Full Name
+                </label>
+                <input value={fname}  className="input-fname" onChange={handleChange}></input>
                 <label
                   htmlFor=""
                   className="font-bold text-xl text-white text-center"
