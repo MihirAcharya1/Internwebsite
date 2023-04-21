@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+.active.fade-left {
+  animation: fade-left .5s ease-in;
+}
+.active.fade-right {
+  animation: fade-right .5s ease-in;
+}
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.reveal2{
+    animation: fadeoutAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.Main-container{
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  
+}
+.Form-container{
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.DSPcontainer{
+    animation: fadeoutAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+}
+.h1-styleing{
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.plans-fade{
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.plan-fade-down{
+  animation: fadeoutAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0%{
+
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes fadeoutAnimation {
+    0%{
+
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

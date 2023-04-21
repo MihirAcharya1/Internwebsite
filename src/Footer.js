@@ -3,10 +3,42 @@ import PlaceIcon1 from './img/pin.png';
 import Insta from './img/Insi.png';
 import GmailIcon from './img/send-mail.png';
 import PhoneIcon from './img/phone-call.png';
+import { db } from './firestore';
+import { addDoc,collection ,setDoc,doc} from 'firebase/firestore';
+import { useState } from 'react';
+
 export default function FooterContent() {
+
+const [email,setEmail] = useState("");
+
+const addDataWithCustomId = (collectionName, docId, data) => {
+    setDoc(doc(db, collectionName, docId), data)
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  };
+  
+  const handleAddData = () => {
+    try{
+        if(email!=null){
+            const data = { 
+            UsersEmailIds:email,
+           };
+        addDataWithCustomId("JoinUsUsers", email, data);
+    }
+    } catch(err){
+        console.log(err);
+    }
+   
+    
+  };
+
+
     return (
         <div className='Footer-container'>
-            {/*  style={{ width: "100%", backgroundColor: "white", margin: "0", paddingTop: '100px', paddingBottom: "20px" }} */}
             <div className="Footer-content">
                 <div className="foot-img-view">
                     <div className='foot-logoC'>
@@ -17,20 +49,20 @@ export default function FooterContent() {
 
                 <div className="foot-links-content">
                     <div className="Email-in-join_us-btn">
-                        <input type={Text} placeholder={'Your Email Id'} className='input-mail'></input>
-                        <button className="joinus-foot-btn" style={{cursor:"pointer"}}>JOIN US</button>
+                        <input type={Text} placeholder={'Your Email Id'} className='input-mail' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+                        <button className="joinus-foot-btn" style={{cursor:"pointer"}} onClick={handleAddData}>JOIN US</button>
                     </div>
                     <div className="links-container-footer">
                         
-                        <div className="links-content" >
+                        <div className="links-content1" >
                             <h3>CONTACT LINKS</h3>
-                            <p > 
-                                 <p className='design2' id='numStyle' ><img src={PhoneIcon} alt=''  className='IconsLink'/>+91-8602326282</p><br/>
-                                <a href='https://www.instagram.com/autobotcenter/?igshid=YmMyMTA2M2Y%3D' target={'_blank'} rel="noreferrer" className='design2'>   <img src={Insta} alt=''  className='IconsLink'></img>   Instagram</a><br/>
-                                <a href='mailto:gowashexpert@gmail.com' className='design2' style={{marginBottom:'15px' }}><img src={GmailIcon} alt=''  className='IconsLink1' ></img> gowashexpert@gmail.com</a> 
-                            </p>
+                            
+                                 <p className='design2' id='numStyle' ><img src={PhoneIcon} alt=''  className='IconsLink'/>+91-9826661566</p><br/>
+                                <a href='https://www.instagram.com/gowashe/?igshid=YmMyMTA2M2Y%3D&__coig_restricted=1' target={'_blank'} rel="noreferrer" className='design2'>   <img src={Insta} alt=''  className='IconsLink'></img>   Instagram</a><br/>
+                                <a href='mailto:gowashexpert@gmail.com' className='design2' style={{marginBottom:'15px',display:"inline-block"}}><img src={GmailIcon} alt=''  className='IconsLink1' ></img> gowashexpert@gmail.com</a> 
+                            
                         </div>
-                        <div className="links-content" >
+                        <div className="links-content2" >
                             <h3>SERVICES - LOCATIONS</h3>
                             <p>
                                 <a href='?' className='design2'><img src={PlaceIcon1}    className='IconsLink' alt=''/>Bhopal</a><br/>

@@ -8,6 +8,9 @@ import Plan from './Plan';
 import App from './App';
 import SignInSignUp from './SignInSignUp';
 import About from './About';
+import DoorstepPlan from './planPages/doorstepPlan';
+import OutletPlan from './planPages/outletPlan';
+import HybridPlan from './planPages/hybridPlan';
 
 export default function IndexApp(){
   return(
@@ -19,6 +22,9 @@ export default function IndexApp(){
           <Route path='Plan' element={<Plan/>}></Route>
           <Route path='About' element={<About/>}></Route>
           <Route path='SignInSignUp' element={<SignInSignUp/>}></Route>
+          <Route path='/doorstepPlan' element ={<DoorstepPlan/>}></Route>
+          <Route path='/outletPlan' element ={<OutletPlan/>}></Route>
+          <Route path='/hybridPlan' element ={<HybridPlan/>}></Route>
         </Routes>
     </BrowserRouter>
   )

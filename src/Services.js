@@ -17,7 +17,7 @@ export default function service() {
                 
                 {/* <div className='Services_container'> */}
         <h3 className='Workh'>The work we do ,<br /> and the people we help.</h3><br />
-        <p className='newsec1'>Our expert personnel provide the best services possible by attending to every detail of interior
+        <p className='newsec1 '>Our expert personnel provide the best services possible by attending to every detail of interior
           and exterior dusting, washing, shampooing,
           detailing and sanitizing services of vehicles at your place.
           We wish to transform automobile owners' perceptions of taking thorough care of their vehicles
@@ -26,7 +26,7 @@ export default function service() {
             
             <div className='services-display' >
             <div className='ImageCol'>
-                <div className='Services-content' id='doorstep_content_plan' >
+                <div className='Services-content reveal fade-left' id='doorstep_content_plan' >
                     <div className='images-hold1'>
                         <img src={img1} className='img1'  alt=""/>
                     </div>
@@ -36,7 +36,7 @@ export default function service() {
                     
 
                 </div>
-                <div className='Services-content' id='Outlet_content_plan'>
+                <div className='Services-content reveal fade-left' id='Outlet_content_plan'>
                     <div className='images-hold1'>
                         <img src={img2} className='img1'  alt=""/>
                     </div>
@@ -46,7 +46,7 @@ export default function service() {
                     </div>
                 </div>
                 </div>
-                <div className='Services-content' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}id='Hybrid_content_plan' >
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}id='Hybrid_content_plan' >
                     <div className='images-hold3' >
                         <img src={img3} className='img3'  alt=""/>
                     </div>
@@ -56,7 +56,7 @@ export default function service() {
                     </div>
                 </div>
                 <div className='ImageCol'>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-right'>
                     <div className='images-hold1'>
                         <img src={img4} className='img1'  alt=""/>
                     </div>
@@ -66,7 +66,7 @@ export default function service() {
                     </div>
                 </div>
 
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-right'>
                     <div className='images-hold1'>
                         <img src={img5} className='img1'  alt=""/>
                     </div>
@@ -78,7 +78,7 @@ export default function service() {
                 </div>
 
 
-                <div className='Services-content' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}>
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}>
                     <div className='images-hold3'>
                         <img src={img6} className='img3' alt="" />
                     </div>
@@ -88,7 +88,7 @@ export default function service() {
                     </div>
                 </div>
                 <div className='ImageCol'>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-left'>
                     <div className='images-hold1'>
                         <img src={img7} className='img1'  alt=""/>
                     </div>
@@ -97,7 +97,7 @@ export default function service() {
 									water marks and retain vehicle life.</p>
                     </div>
                 </div>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-left'>
                     <div className='images-hold1'>
                         <img src={img8} className='img1'  alt=""/>
                     </div>
@@ -107,7 +107,7 @@ export default function service() {
                     </div>  
                 </div>
                 </div>
-                <div className='Services-content' style={{display:"block", justifyItems:"center", paddingTop:"50px"}}>
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center", paddingTop:"50px"}}>
                     <div className='images-hold3'>
                         <img src={img9} className='img3'  alt=""/>
                     </div>

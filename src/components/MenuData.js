@@ -20,9 +20,9 @@ export const MenuData = [
         url:"/About",
         cName:"NavLinks",
     },
-    {
-        title:"Sign In",
-        url:"/SignInSignUp",
-        cName:"SignUpbtn"
-    }
+    // {
+    //     title:"Sign In",
+    //     url:"/SignInSignUp",
+    //     cName:"SignUpbtn"
+    // }
 ]

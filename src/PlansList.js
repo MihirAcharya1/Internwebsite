@@ -3,14 +3,15 @@ export const DoorStep = [
         price:"Rs - 699"
     },
     {
-        planDetails:"Exterior Cleaning."
+        planDetails:"Exterior cleaning"
     },
     {
-        planDetails:"Glass Cleaning."
+        planDetails:"Glass cleaning"
     },
     {
-        planDetails:"Wheel Cleaning."
-    }
+        planDetails:"Tyre Polishing"
+    },
+ 
 ]
 export  const Outlet = [
     {

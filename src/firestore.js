@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+const apiKeyf = process.env.REACT_APP_API_KEY_F;
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCcscA5m5OXGtUOcqQp65UPa_nnUXksEl4",
+    apiKey: apiKeyf,
     authDomain: "gowashe-dd0b5.firebaseapp.com",
     projectId: "gowashe-dd0b5",
     storageBucket: "gowashe-dd0b5.appspot.com",

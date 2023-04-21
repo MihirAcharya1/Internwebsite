@@ -1,15 +1,15 @@
-import Nav from './components/Navbar';
-// import ReverseGeo from './components/reverseGeo';
-
+import Navbar from "./components/Navbar";
 
 export default function About(){
-    return(
-        <div>
-            <Nav/>
-           
 
-            </div>
-        
-       
+    return(
+        <>
+        <Navbar/>
+        <div>
+            
+        </div>
+        </>
     )
+
+
 }

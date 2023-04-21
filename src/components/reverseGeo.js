@@ -1,20 +1,18 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PhoneInput from "react-phone-input-2";
-
 import React, { useState, useEffect } from 'react';
 import LocationIcon from '../img/LI.png';
-// import PlaceIcon1 from '../img/pin.png';
 
 
-const Geocode = () => {
+const Geocode = (props) => {
 
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [ph, setPh] = useState("");
-
+  
 
 
   useEffect(() => {
@@ -40,7 +38,7 @@ const Geocode = () => {
   const handleButtonClick1 = async () => {
     try {
       const response = await axios.get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=fe79cd45a8884fe38483b89cc613a8af`
+        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${props.apis}`
       );
       setInputValue(response.data.results[0].formatted);
       console.log(inputValue);
@@ -59,7 +57,7 @@ const Geocode = () => {
     setInputValue(value);
     try {
       const response = await axios.get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${value}&key=fe79cd45a8884fe38483b89cc613a8af&limit=5`
+        `https://api.opencagedata.com/geocode/v1/json?q=${value}&key=${props.apis}&limit=5`
       );
       const results = response.data.results;
       const addresses = results.map((result) => result.formatted);

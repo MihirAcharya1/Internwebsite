@@ -1,17 +1,19 @@
 .plan-wrapper{
    position: fixed;
-   top: 0;
+   top: 130px;
    left: 0;
    right: 0;
    bottom: 0;
-   background-color: rgba(189, 189, 189, 0.9);
+   /* z-index: 1; */
+   background-color: transparent;
+
 
 }
 .plan-booked-view{
     position: fixed;
     width: 250px;
     max-width: 250px;
-
+z-index: 1;
     top:50%;
     left: 50%;
     text-align: start;
@@ -21,7 +23,7 @@
     border-radius: 10px;
 
 }
-.plan-booked-view h2{
+.plan-booked-view h1{
     font-size: 1.2em;
     font-weight: bold;
     color:darkgreen;
@@ -38,33 +40,18 @@
     
     
 }
-.plan-booked-view p{
-    /* font-size: 1em; */
-    /* font-weight: 700; */
-    padding-left: 10px;
-    
-    
-}
+
 .btn-cancel{
     width: 30px;
     height: 30px;
+    /* display: inline-block; */
     background-color:white;
     margin-left: calc(100% - 30px);
     margin-right: 0;
     margin-bottom: 5px;
 
 }
-.btn-confirm{
-    width: 120px;
-    text-align: center;
-    padding: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: white;
-    background-color: green;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
+
 .mt-1{
     display: inline-block;
     

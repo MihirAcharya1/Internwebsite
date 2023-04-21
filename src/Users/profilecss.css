@@ -1,0 +1,70 @@
+.inputAddressStyles{
+    border-bottom: 2px solid black;
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+.pincodecss{
+    border-bottom: 2px solid black;
+    display: inline-block;
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+.save-btn{
+border: 2px solid green;
+padding: 2px;
+width: 80px;
+
+background-color: green;
+border-radius: 5px;
+color: white;margin-left: 10px;
+}
+.UserDetailsForm{
+    padding: 10px;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.inputAddressStyles:focus ,.pincodecss:focus {
+ box-sizing: border-box;
+outline: none;
+   
+}
+.plan-booked-view2{
+    position: fixed;
+    width: 300px;
+    height:auto;
+    /* max-width: 250px; */
+
+    top:50%;
+    left: 50%;
+    text-align: start;
+    transform: translate(-50% ,-50%);
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.plan-booked-view2 h1{
+    text-align: center;
+    color: white;
+    background-color: green;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 5px 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn-collect{
+    border: 2px solid green;
+padding: 2px;
+width: 80px;
+background-color: green;
+border-radius: 5px;
+color: white;margin: 5px;
+}
+

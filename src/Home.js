@@ -11,25 +11,29 @@ import img6 from './img/close-up-car-care-process.jpg';
 import img7 from './img/man-washing-his-car-garage.jpg';
 import img8 from './img/chemicals.jpg';
 import img9 from './img/cosmetics.jpg';
+import './fadeEffect.css'
 
 
 export default function HomeApp() {
   const myRef = useRef(null);
   const myRef2 = useRef(null);
   const myRef3 = useRef(null);
+  const apiKey = process.env.REACT_APP_API_KEY;
+//   const apiKey2 = process.env.REACT_APP_API_KEY;
+  
 
   return (<>
     <div className='My_app'>
       <Nav />
       <div className='Slogans'>
-        <ReverseGeo/>
+       <div className='reveal2'><ReverseGeo  apis={apiKey} /></div> 
            
         <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>
         <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p></div>
 
       <div className='webV4' style={{ width: "100%", height: "200px" }}></div>
-      <div className='Articles1'>
-        <p className='articles_p' >With <b style={{ color: "rgb(80, 234, 80)" }}>GO</b><b style={{ color: "rgb(0, 128, 255)" }}>WASH</b><b style={{ color: "red" }}>E</b>
+      <div className='Articles1 reveal fade-bottom'>
+        <p className='articles_p ' >With <b style={{ color: "rgb(80, 234, 80)" }}>GO</b><b style={{ color: "rgb(0, 128, 255)" }}>WASH</b><b style={{ color: "red" }}>E</b>
           , you can
           schedule a wash now
           and get a professional to your door in minutes. Rest assured your washer has been thoroughly
@@ -46,36 +50,36 @@ export default function HomeApp() {
         <p className='design' style={{ fontSize: "2em", marginTop: "90px", marginBottom: "30px", fontWeight: "400" }}>Our Approach</p>
       </div>
       <div className='service_section'>
-        <p className='articles_p' id='doorstep_content' style={{ paddingTop: "80px" ,paddingBottom:"80px"}}>
-          <p   onClick={() => myRef.current.scrollIntoView()} style={{ display: "inline-block", color: "#979797", textDecoration: "none" }} className="design2">Doorstep Car Wash -</p>  Book your car wash from the comfort of your home and get our washing
+        <div className='articles_p ' id='doorstep_content' style={{ paddingTop: "80px" ,paddingBottom:"80px"}}>
+          <p   onClick={() => myRef.current.scrollIntoView()} className='reveal fade-bottom'><b style={{ display: "inline-block", color: "#979797", textDecoration: "none" ,fontWeight:"600"}} className="design2">Doorstep Car Wash</b> - Book your car wash from the comfort of your home and get our washing
           professional at your doorstep within minutes. We also provide monthly and hassle free
           subscriptions for your car wash.We provide complete car wash and detailing service for all
-          models of high-end vehicles including sedans, MUVs, 5-seater SUVs, and 7-seater SUVs.<br /><br />
-          <p   onClick={() => myRef2.current.scrollIntoView()}   id='Outlet_content' style={{ display: "inline-block", color: "#979797", textDecoration: "none" , paddingTop:"90px" }} className="design2">Outlet Car Wash -</p> Get our outlet car wash appointment booked from our website and
+          models of high-end vehicles including sedans, MUVs, 5-seater SUVs, and 7-seater SUVs.</p> <br /><br />
+          <p   onClick={() => myRef2.current.scrollIntoView()} className='reveal fade-bottom'   id='Outlet_content' ><b style={{ display: "inline-block", color: "#979797", textDecoration: "none",fontWeight:"600" , paddingTop:"90px" }} className="design2 ">Outlet Car Wash -</b> Get our outlet car wash appointment booked from our website and
           -	app or mobile
-          to avoid queue waiting time and save your precious time for your family and friends.<br /><br />
-          <p  onClick={() => myRef3.current.scrollIntoView()}  href='#Hybrid_content_plan'  id='Hybrid_content' style={{ display: "inline-block", color: "#979797", textDecoration: "none", paddingTop:"90px" }} className="design2">Hybrid Car Wash -</p> With our hybrid car wash plan you get a monthly doorstep
+          to avoid queue waiting time and save your precious time for your family and friends.</p><br /><br />
+          <p  onClick={() => myRef3.current.scrollIntoView()} className='reveal fade-bottom'  href='#Hybrid_content_plan'  id='Hybrid_content'><b style={{ display: "inline-block", color: "#979797", textDecoration: "none", paddingTop:"90px" ,fontWeight:"600"}} className="design2">Hybrid Car Wash -</b> With our hybrid car wash plan you get a monthly doorstep
           car wash along
           with outlet car wash as a perk at the most competitive market price without queue waiting
-          time.<br /><br />
-        </p>
+          time.</p><br /><br />
+        </div>
       </div>
-      {/* <ServicePage /> */}
+     
       <div style={{background:"white"}}>
               
                 
-                {/* <div className='Services_container'> */}
-        <h3 className='Workh'>The work we do ,<br /> and the people we help.</h3><br />
-        <p className='newsec1'>Our expert personnel provide the best services possible by attending to every detail of interior
+               
+        <h3 className='Workh reveal fade-bottom'>The work we do ,<br /> and the people we help.</h3><br />
+        <p className='newsec1 reveal fade-bottom'>Our expert personnel provide the best services possible by attending to every detail of interior
           and exterior dusting, washing, shampooing,
           detailing and sanitizing services of vehicles at your place.
           We wish to transform automobile owners' perceptions of taking thorough care of their vehicles
           with our exceptional car cosmetic services.</p>
-      {/* </div> */}
+      
             
             <div className='services-display' >
             <div className='ImageCol'>
-                <div className='Services-content' id='doorstep_content_plan'  ref={myRef} style={{paddingTop:"90px"}}>
+                <div className='Services-content reveal fade-left' id='doorstep_content_plan'  ref={myRef} style={{paddingTop:"90px"}}>
                     <div className='images-hold1'>
                         <img src={img1} className='img1'  alt=""/>
                     </div>
@@ -85,7 +89,7 @@ export default function HomeApp() {
                     
 
                 </div>
-                <div className='Services-content' id='Outlet_content_plan' ref={myRef2} style={{paddingTop:"90px"}}>
+                <div className='Services-content reveal fade-left ' id='Outlet_content_plan' ref={myRef2} style={{paddingTop:"90px"}}>
                     <div className='images-hold1'>
                         <img src={img2} className='img1'  alt=""/>
                     </div>
@@ -95,7 +99,7 @@ export default function HomeApp() {
                     </div>
                 </div>
                 </div>
-                <div className='Services-content' style={{display:"block", justifyItems:"center",paddingTop:"90px"}}id='Hybrid_content_plan' ref={myRef3} >
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center",paddingTop:"90px"}}id='Hybrid_content_plan' ref={myRef3} >
                     <div className='images-hold3' >
                         <img src={img3} className='img3'  alt=""/>
                     </div>
@@ -105,7 +109,7 @@ export default function HomeApp() {
                     </div>
                 </div>
                 <div className='ImageCol'>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-right'>
                     <div className='images-hold1'>
                         <img src={img4} className='img1'  alt=""/>
                     </div>
@@ -115,7 +119,7 @@ export default function HomeApp() {
                     </div>
                 </div>
 
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-right'>
                     <div className='images-hold1'>
                         <img src={img5} className='img1'  alt=""/>
                     </div>
@@ -127,7 +131,7 @@ export default function HomeApp() {
                 </div>
 
 
-                <div className='Services-content' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}>
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center",paddingTop:"50px"}}>
                     <div className='images-hold3'>
                         <img src={img6} className='img3' alt="" />
                     </div>
@@ -137,7 +141,7 @@ export default function HomeApp() {
                     </div>
                 </div>
                 <div className='ImageCol'>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-left'>
                     <div className='images-hold1'>
                         <img src={img7} className='img1'  alt=""/>
                     </div>
@@ -146,7 +150,7 @@ export default function HomeApp() {
 									water marks and retain vehicle life.</p>
                     </div>
                 </div>
-                <div className='Services-content'>
+                <div className='Services-content reveal fade-left'>
                     <div className='images-hold1'>
                         <img src={img8} className='img1'  alt=""/>
                     </div>
@@ -156,7 +160,7 @@ export default function HomeApp() {
                     </div>  
                 </div>
                 </div>
-                <div className='Services-content' style={{display:"block", justifyItems:"center", paddingTop:"50px",paddingBottom:'50px'}}>
+                <div className='Services-content reveal fade-bottom' style={{display:"block", justifyItems:"center", paddingTop:"50px",paddingBottom:'50px'}}>
                     <div className='images-hold3'>
                         <img src={img9} className='img3'  alt=""/>
                     </div>
