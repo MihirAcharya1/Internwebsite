@@ -127,11 +127,9 @@
         color: #ffffff;
         padding-top: 10px;
     padding-bottom: 10px;
-    width: fit-content;
-    padding-left: 50px;
-    padding-right: 50px;
+    
+  width: 80%;
   
-    /* padding-left: 35%; */
-    /* padding-right: 35%; */
+  margin-left:10%;
     }
 }

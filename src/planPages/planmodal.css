@@ -1,12 +1,12 @@
 .plan-wrapper{
    position: fixed;
-   top: 130px;
+   top: 123px;
    left: 0;
    right: 0;
    bottom: 0;
-   /* z-index: 1; */
+   /* z-index: -1; */
    background-color: transparent;
-
+    /* backdrop-filter: blur(5px); */
 
 }
 .plan-booked-view{
@@ -49,6 +49,18 @@ z-index: 1;
     margin-left: calc(100% - 30px);
     margin-right: 0;
     margin-bottom: 5px;
+
+}
+.btn-cancel2{
+    width: 100%;
+    height: 30px;
+    color: blue;
+    /* display: inline-block; */
+    background-color:antiquewhite;
+    /* margin-left: calc(50% - 30px); */
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
 
 }
 

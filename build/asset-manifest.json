@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.2e09a622.css",
-    "main.js": "/static/js/main.32f4a339.js",
-    "static/media/coming-soon.jpg": "/static/media/coming-soon.debb385e61d8566b85b7.jpg",
+    "main.css": "/static/css/main.b5daa694.css",
+    "main.js": "/static/js/main.d0268e29.js",
     "static/media/hybrid.jpg": "/static/media/hybrid.65b9ebdc7dcf86658d9c.jpg",
     "static/media/young-man-washing-car-carwash-station-outdoor.jpg": "/static/media/young-man-washing-car-carwash-station-outdoor.0c4021699273db3dd6c2.jpg",
     "static/media/woman-washing-her-car-outside1 - Copy.jpg": "/static/media/woman-washing-her-car-outside1 - Copy.d2283314bcbca4d86d1e.jpg",
+    "static/media/water-texture-background-rainy-window-night.jpg": "/static/media/water-texture-background-rainy-window-night.71a760ff9dffe401be11.jpg",
     "static/media/beautiful-car-washing-service.jpg": "/static/media/beautiful-car-washing-service.cf507cd6adfd97c41926.jpg",
     "static/media/man-washing-his-car-garage.jpg": "/static/media/man-washing-his-car-garage.c70fd9d35e4bf788a709.jpg",
     "static/media/cosmetics.jpg": "/static/media/cosmetics.dfdd4d8b767180ea1573.jpg",
@@ -19,11 +19,11 @@
     "static/media/phone-call.png": "/static/media/phone-call.fd7700fa7f9bba0feea9.png",
     "static/media/LI.png": "/static/media/LI.1843e023cd3333def4c6.png",
     "index.html": "/index.html",
-    "main.2e09a622.css.map": "/static/css/main.2e09a622.css.map",
-    "main.32f4a339.js.map": "/static/js/main.32f4a339.js.map"
+    "main.b5daa694.css.map": "/static/css/main.b5daa694.css.map",
+    "main.d0268e29.js.map": "/static/js/main.d0268e29.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e09a622.css",
-    "static/js/main.32f4a339.js"
+    "static/css/main.b5daa694.css",
+    "static/js/main.d0268e29.js"
   ]
 }

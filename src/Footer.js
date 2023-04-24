@@ -49,7 +49,7 @@ const addDataWithCustomId = (collectionName, docId, data) => {
 
                 <div className="foot-links-content">
                     <div className="Email-in-join_us-btn">
-                        <input type={Text} placeholder={'Your Email Id'} className='input-mail' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+                        <input  placeholder={'Your Email Id'} className='input-mail' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
                         <button className="joinus-foot-btn" style={{cursor:"pointer"}} onClick={handleAddData}>JOIN US</button>
                     </div>
                     <div className="links-container-footer">
@@ -65,11 +65,13 @@ const addDataWithCustomId = (collectionName, docId, data) => {
                         <div className="links-content2" >
                             <h3>SERVICES - LOCATIONS</h3>
                             <p>
-                                <a href='?' className='design2'><img src={PlaceIcon1}    className='IconsLink' alt=''/>Bhopal</a><br/>
+                            {/* <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=latitude,longitude', '_blank');">Open Map</button> */}
+{/* https://www.google.com/maps/place/Gowashe+(Car+%26+Bike+Wash)/@23.2218067,77.4945859,20.73z/data=!4m6!3m5!1s0x397c41aa0a0194c9:0xcc205b5bbd25bdc4!8m2!3d23.2219318!4d77.4945467!16s%2Fg%2F11ssbyyzp6 */}
+                                <a href='https://www.google.com/maps/place/Gowashe+(Car+%26+Bike+Wash)/@23.2218067,77.4945859,20.73z/data=!4m6!3m5!1s0x397c41aa0a0194c9:0xcc205b5bbd25bdc4!8m2!3d23.2219318!4d77.4945467!16s%2Fg%2F11ssbyyzp6' target={'_blank'} rel="noreferrer" className='design2'><img src={PlaceIcon1}    className='IconsLink' alt=''/>Bhopal</a><br/>
                                 <a href='?' className='design2'><img src={PlaceIcon1}   className='IconsLink' alt=''/>Indore</a>
                             </p> 
                         </div>
-                    
+                    {/* https://www.google.com/maps/search/?api=1&query=23.221932322478207, 77.49454545927352 */}
 
 
                     </div>

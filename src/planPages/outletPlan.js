@@ -10,9 +10,9 @@ import '../fadeEffect.css'
 
 
 const OutletPlan=()=>{
-    const [loading,setLoading] = useState(false);
-    const [showModal1,setShowModal1] = useState(false);
-    function hideBook1 (){ setShowModal1(false);setLoading(false); }
+    const [loading2,setLoading2] = useState(false);
+    const [showModal2,setShowModal2] = useState(false);
+    function hideBook1 (){ setShowModal2(false);setLoading2(false); }
   
     const OutletPlanPopUp =()=>{
         return(
@@ -29,9 +29,9 @@ const OutletPlan=()=>{
     }
 
   function onhandleClickbtn (){
-    setLoading(true);
+    setLoading2(true);
     toast.success("Plan Booked Successfully!");
-    setShowModal1(true);
+    setShowModal2(true);
   
   }
     return(
@@ -55,7 +55,7 @@ const OutletPlan=()=>{
         </div></div>
          <Toaster  toastOptions={{ duration: 6000 }}/>
 
-         {showModal1 && <OutletPlanPopUp hideBook = {hideBook1 } />}
+         {showModal2 && <OutletPlanPopUp hideBook = {hideBook1 } />}
 
             <div className="Main-container">
 
@@ -64,16 +64,18 @@ const OutletPlan=()=>{
 
                 <div className='service-details-list-2'>
                         <h1 style={{display:"inline-block", fontSize:"2em" ,textDecoration:"underline",paddingBottom:"5px"}}>OUR SERVICES </h1><span style={{color:"red",marginLeft:"20px"}}>3 WASH</span>
-                  { OutletPlanList.map((items, index) => {
+                  { OutletPlanList.map((items) => {
                             return (
                                 <>
-                                    <li key={index}>{items.details}</li>
+                                    <li key={items.id}>{items.details}</li>
                                 </>
                             )
                         })}
+                        <h3  style={{color:"green"}}>Rs: 699</h3>
+
                           <h2>Single Click is Required</h2>
                       <button className='final-book'  onClick={onhandleClickbtn}>
-                {loading && (
+                {loading2 && (
                     <CgSpinner size={20} className="mt-1 animate-spin" />
                   )}
                   <span>Book Plan</span></button>

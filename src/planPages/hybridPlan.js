@@ -73,7 +73,7 @@ export default function HybridPlan(){
                                 </>
                             )
                         })}
-                
+                        <h3 style={{color:"green"}}>Rs: 1099</h3>
                       <h2>Single Click is Required</h2>
                       <button className='final-book'  onClick={onhandleClickbtn}>
                 {loading && (

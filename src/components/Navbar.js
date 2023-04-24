@@ -10,12 +10,12 @@ import  { UserCollectionRef} from '../SignInSignUp'
 
 // const [UserNumber,setUserNumber] = useState("Sign In");
 class Navbar extends Component  {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       users: [],
-    //     };
-    //   }
+    constructor(props) {
+        super(props);
+        this.state = {
+          users: [],
+        };
+      }
     
     //   async componentDidMount() {
     //     const data = await getDocs(UserCollectionRef);
@@ -50,7 +50,7 @@ class Navbar extends Component  {
                          <Link className="SignUpbtn" to="/SignInSignUp" key={user.id}>{user.Contact_No}</Link> 
                         <Link className="SignUpbtn" to="/SignInSignUp">Sign In </Link>
                      </li>))}  */}
-                        <Link className="SignUpbtn" to="/SignInSignUp">Sign In </Link>
+                        <Link className="SignUpbtn" to="/SignInSignUp" >{localStorage.getItem("phonenumber") || "Sign In"}</Link>
 
                    
 
