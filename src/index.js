@@ -18,10 +18,10 @@ export default function IndexApp(){
         <Routes>
           <Route path='/' element={<App/>}></Route>
           <Route index element = {<Home/>}></Route>
-          <Route path='Services' element={<Services/>}></Route>
-          <Route path='Plan' element={<Plan/>}></Route>
-          <Route path='About' element={<About/>}></Route>
-          <Route path='SignInSignUp' element={<SignInSignUp/>}></Route>
+          <Route path='/Services' element={<Services/>}></Route>
+          <Route path='/Plan' element={<Plan/>}></Route>
+          <Route path='/About' element={<About/>}></Route>
+          <Route path='/SignInSignUp' element={<SignInSignUp/>}></Route>
           <Route path='/doorstepPlan' element ={<DoorstepPlan/>}></Route>
           <Route path='/outletPlan' element ={<OutletPlan/>}></Route>
           <Route path='/hybridPlan' element ={<HybridPlan/>}></Route>

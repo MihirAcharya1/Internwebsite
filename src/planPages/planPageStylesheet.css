@@ -16,22 +16,18 @@
 .DSPcontainer {
     display: inline-block;
     width: 400px;
-    /* background-color: #064d47; */
+
 }
 
 .DSP-view_list {
     padding-top: 25px;
-    padding-left: 25px;
     padding-bottom: 25px;
     text-align: start;
-    /* border: 3px solid#ffffff; */
-
     border-radius: 50px 20px 20px 20px;
     margin-top: 30px;
     background-color: transparent;
     display: flex;
     backdrop-filter: blur(5px);
-
     flex-direction: column;
     box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.3);
  border-top: 3px solid #777777;
@@ -42,7 +38,6 @@
     width: 50%;
     display: inline-block;
     height: fit-content;
-
     padding: 20px;
 }
 
@@ -54,15 +49,10 @@
     border-top: 3px solid #777777;
     border-left: 3px solid #969696;
     border-bottom: 2px solid #969696;
-
-
-
-
     background-size: cover;
 
     width: fit-content;
     height: fit-content;
-    /* margin-left: 30px; */
     margin-top: 30px;
     /* position: absolute; */
     border-radius: 20px;
@@ -80,6 +70,19 @@
     list-style: square;
 
 
+}
+.service-details-listp{
+    color: rgb(138, 255, 138);
+    font-size: .8em;
+    padding: 5px;
+    padding-left: 15px;
+    /* margin: 5px; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    /* text-shadow: 1px 1px greenyellow; */
+    
+    background: rgba(163, 163, 163, 0.11);
 }
 
 .service-details-list li ,.service-details-list-2 li{
@@ -101,13 +104,14 @@
 .label-fullname {
     font-size: 1.2em;
     color: white;
+    margin-left: 5%;
 
 }
 
 .input-Name {
     /* background-color: rgba(252, 233, 233, 0.845); */
     text-align: start;
-    padding-left: 20px;
+    padding-left: 15px;
     border: 2px solid #08635b;
     font-weight: 700;
     border-radius: 2px;
@@ -116,8 +120,25 @@
     margin-top: 2px;
     margin-bottom: 5px;
     border-radius: 5px;
-    width: 300px;
+    width: 90%;
+    margin-left: 5%;
 
+
+}
+.input-timing{
+    width: fit-content;
+    text-align: start;
+    padding-left: 15px;
+    border: 2px solid #08635b;
+    font-weight: 700;
+    border-radius: 2px;
+    height: 35px;
+    /* color: #064d47; */
+    margin-top: 2px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    /* width: 90%; */
+    margin-left: 5%;
 }
 .rules-list{
     width: 100%;
@@ -166,12 +187,6 @@ width: 100%;
     justify-content: center;
     margin-top: 60px;
     
-}
-.image-view{
-
-}
-.perfect{
-    /* padding-bottom: 30px; */
 }
 .Plan-details-view{
     background: rgba(117, 116, 116, 0.11);

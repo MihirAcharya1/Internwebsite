@@ -50,62 +50,32 @@ const SignInSignUp = () => {
 
 
   // get current user db
-const [userData,setUserData] = useState({});
-  function CurrentUserDb(e){
+  // const [userData, setUserData] = useState({});
+  // function CurrentUserDb(e) {
 
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        setUser(user);
-        e.preventDefault();
-        db.collection("users")
-        .doc(user.uid)
-        .get()
-        .then((sp)=>{
-          if(sp){
-            setUserData(sp.data());
-          }
-        });
-          console.log(userData);
-      }
-    });
+  //   auth.onAuthStateChanged(user => {
+  //     if (user) {
 
-   
-  }
+  //       setUser(user);
+  //       e.preventDefault();
+  //       db.collection("users")
+  //         .doc(user.uid)
+  //         .get()
+  //         .then((sp) => {
+  //           if (sp) {
+  //             setUserData(sp.data());
+  //           }
+  //         });
+  //       console.log(userData);
+  //     }
+  //   });
+
+
+  // }
 
 
 
   //add data to firestore
-  // const [uName,setName] = useState("")
-  // // const [uMobileNumber,setMobileNumber] = useState("")
-  // const [uAddress,setAddress] = useState("")
-  // const [uRefnumber,setRefnumber] = useState("")
-  // const [uServicePick,setServicePick] = useState("")
-  // const [uVehiclecolor,setVehiclecolor] = useState("")
-  // const [uVehicleNo,setVehicleNo] = useState("")
-  // const [uServicestart,setServiceStart] = useState("")
-  // const [uReady,setReady] = useState("")
-
-  //create user in firestore
-
-
-
-
-  // useEffect(()=>{
-  //   const getUsers  = async () => {
-  //     const data = await getDocs(UserCollectionRef);
-  //     // console.log(data);
-  //     setUser(data.docs.map((doc)=> ({...doc.data(),id:doc.id})))
-
-  //   }
-  //   getUsers();
-  //   // ShareNo();
-  // },[]
-  // );
-
-  // const ShareNo =()=>{
-  //   setMobile(user.Contact_No);
-
-  // }
 
 
   // captcha Verify
@@ -131,27 +101,32 @@ const [userData,setUserData] = useState({});
   //SignIn/up function 
 
   function onSignup() {
-    setLoading(true);
-    onCaptchVerify();
-    //add usernumber to local storage
-
-    console.log(ph);
-    const appVerifier = window.recaptchaVerifier;
-
-    const formatPh = "+" + ph;
-
-    signInWithPhoneNumber(auth, formatPh, appVerifier)
-      .then((confirmationResult) => {
-        window.confirmationResult = confirmationResult;
-        setLoading(false);
-        setShowOTP(true);
-        toast.success("OTP sended successfully!");
-      })
-      .catch((error) => {
-        console.log(error);
-        // alert("Error:"+error);
-        setLoading(false);
-      });
+    if(ph.length ===12){
+      setLoading(true);
+      onCaptchVerify();
+      //add usernumber to local storage
+  
+      console.log(ph);
+      const appVerifier = window.recaptchaVerifier;
+  
+      const formatPh = "+" + ph;
+  
+      signInWithPhoneNumber(auth, formatPh, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          setLoading(false);
+          setShowOTP(true);
+          toast.success("OTP sended successfully!");
+        })
+        .catch((error) => {
+          console.log(error);
+          // alert("Error:"+error);
+          setLoading(false);
+        });
+    }else{
+      alert("Please provide your 10 digit mobile number...!");
+    }
+   
   }
 
 
@@ -170,8 +145,8 @@ const [userData,setUserData] = useState({});
         handleAddData();
         toast.success("Login successfully!");
 
-        localStorage.setItem("phonenumber",ph);
-        
+        localStorage.setItem("phonenumber", ph);
+
       })
       .catch((err) => {
         console.log(err);
@@ -187,7 +162,7 @@ const [userData,setUserData] = useState({});
         setShowOTP(false);
         setUserUID(null);
         setDocumentData(null);
-        localStorage.setItem("phonenumber","Sign In");
+        localStorage.setItem("phonenumber", "Sign In");
 
         console.log("User SignOut Successfully!")
       })
@@ -225,7 +200,7 @@ const [userData,setUserData] = useState({});
   //create database of user in firestore
 
   const addDataWithCustomId = (collectionName, docId, data) => {
-    updateDoc(doc(db, collectionName, docId), data)
+    setDoc(doc(db, collectionName, docId), data)
       .then(() => {
         console.log("Document successfully written!");
       })
@@ -234,50 +209,50 @@ const [userData,setUserData] = useState({});
       });
   };
 
-
-  // const CreateUsers = async()=> {
-  //   await addDoc(UserCollectionRef,
-  //     {
-  //       fullname:uName,
-  //       phonenumber:ph,
-  //       address:uAddress,
-  //       refnumber:uRefnumber,
-  //       servicePick:uServicePick,
-  //       vehiclecolor:uVehiclecolor,
-  //       vehicleNo:uVehicleNo,
-  //       serviceStart:uServicestart,
-  //       readybefore:uReady
-
-  //     })
-  // }
+  // const [isNewUser, setIsNewUser] = useState(false);
   const handleAddData = () => {
     const data = {
       phonenumber: ph,
     };
     auth.onAuthStateChanged((Cuser) => {
       if (Cuser) {
+
+        const creationTime = Cuser.metadata.creationTime;
+        const lastSignInTime =Cuser.metadata.lastSignInTime;
+        if (creationTime === lastSignInTime) {
+          // setIsNewUser(true);
         addDataWithCustomId("users", Cuser.uid, data);
+
+          console.log('New user detected');
+        } else {
+          // setIsNewUser(false);
+          console.log('Existing user detected');
+        }
+        // User is a nw user
+        // addDataWithCustomId("users", Cuser.uid, data);
+
+
       }
     })
   };
 
-  const [showModal1,setShowModal1] = useState(false);
-  function hideBook1 (){setShowModal1(false);setLoading(false);navigate('/Plan') }
+  const [showModal1, setShowModal1] = useState(false);
+  function hideBook1() { setShowModal1(false); setLoading(false); navigate('/Plan') }
 
 
-  const SavedPopUp =()=>{
-    return(
-        <><div className='plan-wrapper'></div>
+  const SavedPopUp = () => {
+    return (
+      <><div className='plan-wrapper'></div>
         <div className='plan-booked-view'>
 
-         <h1>Your Data Saved !</h1>
-         <h3 style={{color:"black"}}>Lets see Plans & Prices...</h3>
-        <button onClick={hideBook1} className='btn-cancel2'>OK</button>
-            
+          <h1>Your Data Saved !</h1>
+          <h3 style={{ color: "black" }}>Lets see Plans & Prices...</h3>
+          <button onClick={hideBook1} className='btn-cancel2'>OK</button>
+
         </div>
-        </>
+      </>
     )
-}
+  }
 
 
   function Profile() {
@@ -302,35 +277,35 @@ const [userData,setUserData] = useState({});
     const handlebtnSave = () => {
 
 
-      // if(!pincode || !city || !fullname || !houseno || !colony || !area || !state){
-      //   // return;
-      // alert("Fields can't be empty !");
+      if (!pincode || !city || !fullname || !houseno || !colony || !area || !state) {
+        // return;
+        alert("Fields can't be empty !");
 
-      // }else{
+      } else {
 
-        auth.onAuthStateChanged((user)=>{
-          if(user){
-            const data = { 
-              Fullname:fullname,
-              Houseno:houseno,
-              Colony:colony,
-              Area:area,
-              City:city,
-              State:state
-                };
-                addDataWithCustomId2("users",user.uid,data);
-                console.log("successfully set new updates");
-                toast.success("Save Perfectly!");
-                setShowModal(false);
-                setShowModal1(true);
-                
+        auth.onAuthStateChanged((user) => {
+          if (user) {
+            const data = {
+              Fullname: fullname,
+              Houseno: houseno,
+              Colony: colony,
+              Area: area,
+              City: city,
+              State: state
+            };
+            addDataWithCustomId2("users", user.uid, data);
+            console.log("successfully set new updates");
+            toast.success("Save Perfectly!");
+            setShowModal(false);
+            setShowModal1(true);
+
           }
         });
 
-      
-     
-    // }
-  }
+
+
+      }
+    }
 
 
 
@@ -362,7 +337,7 @@ const [userData,setUserData] = useState({});
           <input type="text" className="inputAddressStyles" value={state} placeholder="State" onChange={(e) => { setState(e.target.value) }}></input>
           <input type="text" className="inputAddressStyles" value={city} placeholder="City" onChange={(e) => { setCity(e.target.value) }} ></input>
           <button className="btn-collect" onClick={handlebtnSave}>SAVE</button>
-          
+
 
         </div>
 
@@ -372,9 +347,9 @@ const [userData,setUserData] = useState({});
 
 
   const [documentData, setDocumentData] = useState(null);
-  const FetchData = () =>{
-     auth.onAuthStateChanged(async (Cuser) => {
-      if (Cuser){
+  const FetchData = () => {
+    auth.onAuthStateChanged(async (Cuser) => {
+      if (Cuser) {
 
         const documentRef = doc(db, 'users', Cuser.uid);
         const docSnap = await getDoc(documentRef);
@@ -390,18 +365,18 @@ const [userData,setUserData] = useState({});
     });
   }
 
-  
+
 
   const getDataFilled = () => {
 
-// FetchData();
-    
+    // FetchData();
+
 
     return (
 
       <div className="logout-view" style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
-         <Toaster toastOptions={{ duration: 3000 }} />
-         {showModal1 && <SavedPopUp hideBook1 = {hideBook1 } />}
+        <Toaster toastOptions={{ duration: 3000 }} />
+        {showModal1 && <SavedPopUp hideBook1={hideBook1} />}
 
         <div className="logout-container" style={{ width: "300px", height: "fit-content", padding: "10px" }}>
 
@@ -411,7 +386,7 @@ const [userData,setUserData] = useState({});
           >
             <span>Complete Profile First</span>
           </button>
-          {showModal && <HandleCompleteProfile  />}
+          {showModal && <HandleCompleteProfile />}
           <br />
           <button
             onClick={handleSignOut}
@@ -489,7 +464,7 @@ const [userData,setUserData] = useState({});
                 >
                   Verify your phone number
                 </label>
-                <PhoneInput country={"in"} value={ph} onChange={setPh}      ref={userNumber}  />
+                <PhoneInput country={"in"} value={ph} onChange={setPh} ref={userNumber} />
                 <button
                   onClick={onSignup}
                   className="bg-emerald-600 w-full flex gap-1 items-center justify-center py-2.5 text-white rounded"

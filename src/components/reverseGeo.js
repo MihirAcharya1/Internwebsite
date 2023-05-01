@@ -1,12 +1,13 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import PhoneInput from "react-phone-input-2";
 import React, { useState, useEffect } from 'react';
 import LocationIcon from '../img/LI.png';
 
 
-const Geocode = (props) => {
 
+const Geocode = (props) => {
+  const navigate =useNavigate();
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [inputValue, setInputValue] = useState('');
@@ -34,11 +35,21 @@ const Geocode = (props) => {
   }, []);
 
 
+  function handleCheckPrice(){
+    if(inputValue.length>=5  && ph.length===12){
+      navigate('/Plan')
+
+    }
+    else{
+      alert("Fill both Location and phone number First!");
+
+    }
+  }
   // function which convert lat long to address ;
   const handleButtonClick1 = async () => {
     try {
       const response = await axios.get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${props.apis}`
+        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${props.apis}&language=en`
       );
       setInputValue(response.data.results[0].formatted);
       console.log(inputValue);
@@ -55,6 +66,7 @@ const Geocode = (props) => {
   const handleChange = async (event) => {
     const value = event.target.value;
     setInputValue(value);
+    console.log(value);
     try {
       const response = await axios.get(
         `https://api.opencagedata.com/geocode/v1/json?q=${value}&key=${props.apis}&limit=5`
@@ -95,7 +107,7 @@ const Geocode = (props) => {
 
           </div>
 
-          <button className="btn-gotoplans" >  <Link to="/Plan">Check Price</Link></button>
+          <button className="btn-gotoplans" onClick={handleCheckPrice}>Check Price</button>
 
         </div>
       </div>

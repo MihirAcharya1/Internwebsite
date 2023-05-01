@@ -73,6 +73,7 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
 .plans-fade{
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;

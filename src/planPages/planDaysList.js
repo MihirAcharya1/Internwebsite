@@ -96,14 +96,14 @@ export const HybridPlanList =[
 export const RequiredProcess =[
     {
         id:0,
-    process:"Vehicle Key Required on Day 2 & Day 9."
+    process:"Vehicle Key Required on Interior Cleaning Days."
 },
+// {
+//     id:1,
+//     process:"This Card will be issued once in a month, Please Don't loos it."
+// },
 {
     id:1,
-    process:"This Card will be issued once in a month, Please Don't loos it."
-},
-{
-    id:2,
     process:"Payment to be done within 15 days of Subscription Date."
 }
 ]

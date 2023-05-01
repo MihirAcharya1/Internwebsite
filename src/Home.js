@@ -26,12 +26,13 @@ export default function HomeApp() {
     <div className='My_app'>
       <Nav />
       <div className='Slogans'>
-       <div className='reveal2'><ReverseGeo  apis={apiKey} /></div> 
-           
-        <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>
+           <div className='Head-Geo'> <h1 className='h1-styleing'>We are proffesional auto wash and detailing, people- friendly digital experiences.</h1>
+       <ReverseGeo  apis={apiKey} className='reveal2'/></div>
+       
+
         <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p></div>
 
-      <div className='webV4' style={{ width: "100%", height: "200px" }}></div>
+      {/* <div className='webV4' style={{ width: "100%", height: "200px" }}></div> */}
       <div className='Articles1 reveal fade-bottom'>
         <p className='articles_p ' >With <b style={{ color: "rgb(80, 234, 80)" }}>GO</b><b style={{ color: "rgb(0, 128, 255)" }}>WASH</b><b style={{ color: "red" }}>E</b>
           , you can
