@@ -1,11 +1,19 @@
 import Logoweb from './img/webLogo.png';
 import PlaceIcon1 from './img/pin.png';
-import Insta from './img/Insi.png';
+// import Insta from './img/Insi.png
 import GmailIcon from './img/send-mail.png';
 import PhoneIcon from './img/phone-call.png';
 import { db } from './firestore';
-import { addDoc,collection ,setDoc,doc} from 'firebase/firestore';
+import {setDoc,doc} from 'firebase/firestore';
 import { useState } from 'react';
+import fb from './img/facebook__1_-removebg-preview.png'
+import insta from './img/instagram__2_-removebg-preview.png'
+import twitt from './img/twitter-removebg-preview.png'
+// import tele from './img/telephone-removebg-preview.png'
+// import mail from './img/mail-removebg-preview.png'
+import whats from './img/whatsapp-removebg-preview.png'
+// import cal from './img/calendar-removebg-preview.png'
+import YT from './img/YT-preview.png'
 
 export default function FooterContent() {
 
@@ -58,9 +66,8 @@ const addDataWithCustomId = (collectionName, docId, data) => {
                             <h3>CONTACT LINKS</h3>
                             
                                  <p className='design2' id='numStyle' ><img src={PhoneIcon} alt=''  className='IconsLink'/>+91-9826661566</p><br/>
-                                <a href='https://www.instagram.com/gowashe/?igshid=YmMyMTA2M2Y%3D&__coig_restricted=1' target={'_blank'} rel="noreferrer" className='design2'>   <img src={Insta} alt=''  className='IconsLink'></img>   Instagram</a><br/>
+                                {/* <a href='https://www.instagram.com/gowashe/?igshid=YmMyMTA2M2Y%3D&__coig_restricted=1' target={'_blank'} rel="noreferrer" className='design2'>   <img src={Insta} alt=''  className='IconsLink'></img>   Instagram</a><br/> */}
                                 <a href='mailto:gowashexpert@gmail.com' className='design2' style={{marginBottom:'15px',display:"inline-block"}}><img src={GmailIcon} alt=''  className='IconsLink1' ></img> gowashexpert@gmail.com</a> 
-                            
                         </div>
                         <div className="links-content2" >
                             <h3>SERVICES - LOCATIONS</h3>
@@ -75,6 +82,15 @@ const addDataWithCustomId = (collectionName, docId, data) => {
 
 
                     </div>
+                   
+            <div className="footer-icons">
+            <a href="https://www.facebook.com/people/gowashe/100090991316145/?mibextid=ZbWKwL" target={'_blank'} rel="noreferrer" className="a-bout"> <img className="icon-links-footer" alt="" src={fb}></img></a>
+            <a href="https://www.instagram.com/gowashe/?igshid=YmMyMTA2M2Y%3D&__coig_restricted=1" target={'_blank'}rel="noreferrer" className="a-bout"> <img className="icon-links-footer" alt="" src={insta}></img></a>
+            <a href="https://twitter.com/gowashe" target={'_blank'} className="a-bout" rel="noreferrer"> <img className="icon-links-footer" alt="" src={twitt}></img></a>
+            <a href="https://wa.me/message/5364BRMWCYCKD1" target={'_blank'} className="a-bout" rel="noreferrer"> <img className="icon-links-footer" alt="" src={whats}></img></a>
+            
+            <a href="https://www.youtube.com/@GOWASHE" target={'_blank'} className="a-bout" rel="noreferrer"> <img className="icon-links-footer" alt="" src={YT}></img></a>
+        </div>
                     <hr></hr>
                     <div id='copyrights'>
                         <p style={{color:"white", textAlign:'center', padding:"15px"}}> Copyrights &copy; 2023. All rights reserved. Privacy Policy </p>                        

@@ -30,7 +30,8 @@ export default function HomeApp() {
        <ReverseGeo  apis={apiKey} className='reveal2'/></div>
        
 
-        <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p></div>
+        <p className='sec1-para'>GOWASHE is the leader in on-demand washing and detailing services. GOWASHE , your car wash app, is the most convenient and cost-effective way to wash your car. Instead of having to drive to a car wash and then wait in line, you can simply download the app, schedule a time, and the mobile car wash will come to you.</p>
+        </div>
 
       {/* <div className='webV4' style={{ width: "100%", height: "200px" }}></div> */}
       <div className='Articles1 reveal fade-bottom'>

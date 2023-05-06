@@ -13,7 +13,7 @@ import { auth } from '../firebase';
 
 // import { onAuthStateChanged } from 'firebase/auth';
 import { doc, updateDoc,getDoc } from 'firebase/firestore';
-// import { useRef } from 'react';
+
 
 // import back from '../img/washing-her-car-outdoors.jpg'
 export default function DoorstepPlan() {
@@ -52,7 +52,6 @@ export default function DoorstepPlan() {
   const DoorStepPlanPopUp = () => {
 
 
-
     return (
       <><div className='plan-wrapper'></div>
         <div className='plan-booked-view'>
@@ -66,9 +65,6 @@ export default function DoorstepPlan() {
     )
   }
 
-  //add data to firestore
-  // const [uName,setName] = useState(null)
-
 
   const RequestAdd = (collectionName, docId, data) => {
     updateDoc(doc(db, collectionName, docId), data)
@@ -80,56 +76,41 @@ export default function DoorstepPlan() {
       });
   };
 
-  const fetchSingle =()=>{
-    auth.onAuthStateChanged(async (Single)=>{
-      if(Single){
-        const docRef = doc(db, 'users',Single.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setSingle(docSnap.data());
-        } else {
-          console.log('No such document!');
-        }
+const preProcess =()=>{
+  auth.onAuthStateChanged(async (getUserd)=>{
+    if(getUserd){
+      const docRef = doc(db, 'users',getUserd.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setSingle(docSnap.data());
+        // console.log(docSnap.data.vehicleNo)
+      } else {
+        console.log('No user doc exists');
       }
-      
-    })
-    checkUser();
-
-  }
-
-  const CheckFilledForm =()=>{
-    auth.onAuthStateChanged(async (SingleData)=>{
-      if(SingleData){
-        const docRefex = doc(db, 'users',SingleData.uid);
-        const docSnap = await getDoc(docRefex);
-        if (docSnap.exists()) {
-          setSingle(docSnap.data());
-        } else {
-          console.log('No such document!');
-        }
-      }
-      
-    })
-    checkfilldetails();
-
-  }
-
-  function checkfilldetails(){
-    // console.log(single.moreDetails.vehicleNo);
-
-    if(single.moreDetails.vehicleNo){
-      console.log(single.moreDetails.vehicleNo);
-      fetchSingle();
-     }else{
-      console.log("not found Vehicle details..!")
-      alert("Kindly fill details form..!")
-      // navigate('/SignInSignUp');
     }
+  })
+}
+  const CheckFilledForm =()=>{
+    preProcess();
+try {
+  if(single.moreDetails.vehicleNo!=null){
+    console.log(single.moreDetails.vehicleNo);
+    checkUser();
+   }else{
+    alert('Kindly fill details');
+  }
+  
+} catch (error) {
+  console.log(error)
+  alert('Kindly fill details');
+}
+   
   }
 
 
 
   function checkUser(){
+
     if(single.Fullname){
       console.log(single.Fullname);
       auth.onAuthStateChanged((user => {
@@ -148,8 +129,8 @@ export default function DoorstepPlan() {
       setShowModal1(true);
 
     }else{
-      console.log("not found Name!")
-      alert("Complete Your Profile..!")
+      console.log("not found Name!");
+      alert("Complete Your Profile..!");
       navigate('/SignInSignUp');
     }
   }
@@ -157,6 +138,7 @@ export default function DoorstepPlan() {
 
   // console.log(uName);
   const checkEmpty = () => {
+    preProcess();
     if (uVehicleName.length < 5 ) {
       alert("Please write vaild Vehicle number !");
       return;
@@ -192,9 +174,9 @@ export default function DoorstepPlan() {
           };
           RequestAdd("users", user.uid, data);
           // setFormR(true);
-          toast.success("Details saved successfully!");
 
         } else {
+          alert("Sign In first..!")
           navigate('/SignInSignUp');
         }
       });
@@ -203,9 +185,7 @@ export default function DoorstepPlan() {
     }
 
   }
-  function onhandleClickbtn() {
-    checkEmpty();
-  }
+ 
  
 
   return (
@@ -321,7 +301,7 @@ export default function DoorstepPlan() {
   </select>
               {/* <input className="input-Name" placeholder='example: date' value={uReady} onChange={(e) => setReady(e.target.value)} type='time'></input> */}
               <button style={{ color: "white", fontSize: "1.2em", border: "2px solid white", width: "150px", marginTop: "20px", marginLeft: "calc(50% - 75px)", borderRadius: "5px" ,backgroundColor:"white"}}
-                onClick={onhandleClickbtn}>
+                onClick={checkEmpty}>
                 {loading && (
                   <CgSpinner size={20} className="mt-1 animate-spin" />
                 )}

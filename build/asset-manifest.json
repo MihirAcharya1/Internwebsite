@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f310eed9.css",
-    "main.js": "/static/js/main.5a167ade.js",
+    "main.css": "/static/css/main.ee46fada.css",
+    "main.js": "/static/js/main.cc184ddd.js",
     "static/media/hybrid.jpg": "/static/media/hybrid.65b9ebdc7dcf86658d9c.jpg",
     "static/media/young-man-washing-car-carwash-station-outdoor.jpg": "/static/media/young-man-washing-car-carwash-station-outdoor.0c4021699273db3dd6c2.jpg",
     "static/media/woman-washing-her-car-outside1 - Copy.jpg": "/static/media/woman-washing-her-car-outside1 - Copy.d2283314bcbca4d86d1e.jpg",
@@ -11,19 +11,27 @@
     "static/media/cosmetics.jpg": "/static/media/cosmetics.dfdd4d8b767180ea1573.jpg",
     "static/media/close-up-car-care-process.jpg": "/static/media/close-up-car-care-process.6cfa206b8b3043a7bac5.jpg",
     "static/media/car-wash-detailing-station.jpg": "/static/media/car-wash-detailing-station.cb4cc2d4bf28a728e07e.jpg",
+    "static/media/calendar-removebg-preview.png": "/static/media/calendar-removebg-preview.30691841ad4483a1e5b5.png",
     "static/media/chemicals.jpg": "/static/media/chemicals.2767c4b19888dccf7a9e.jpg",
+    "static/media/whatsapp-removebg-preview.png": "/static/media/whatsapp-removebg-preview.1064163db5b57999803d.png",
+    "static/media/instagram__2_-removebg-preview.png": "/static/media/instagram__2_-removebg-preview.c2d8a3ba8dd1e68c5fa1.png",
+    "static/media/twitter-removebg-preview.png": "/static/media/twitter-removebg-preview.1d3174cd343e2657716b.png",
+    "static/media/clock-removebg-preview.png": "/static/media/clock-removebg-preview.47c896233ed27564245d.png",
+    "static/media/telephone-removebg-preview.png": "/static/media/telephone-removebg-preview.1494d7050a17ea080eab.png",
     "static/media/webLogo.png": "/static/media/webLogo.036ce32bd2d31cfd29bc.png",
-    "static/media/Insi.png": "/static/media/Insi.85a3e13813e473585985.png",
+    "static/media/mail-removebg-preview.png": "/static/media/mail-removebg-preview.329e6d1511eb09ae4899.png",
+    "static/media/facebook__1_-removebg-preview.png": "/static/media/facebook__1_-removebg-preview.9857e414f40167eeb77a.png",
     "static/media/pin.png": "/static/media/pin.d21bfb0d43fff9776f1b.png",
     "static/media/send-mail.png": "/static/media/send-mail.5339fcad4a1c6cea5d54.png",
     "static/media/phone-call.png": "/static/media/phone-call.fd7700fa7f9bba0feea9.png",
+    "static/media/YT-preview.png": "/static/media/YT-preview.94ab3ff4f4d3b98a5cfa.png",
     "static/media/LI.png": "/static/media/LI.1843e023cd3333def4c6.png",
     "index.html": "/index.html",
-    "main.f310eed9.css.map": "/static/css/main.f310eed9.css.map",
-    "main.5a167ade.js.map": "/static/js/main.5a167ade.js.map"
+    "main.ee46fada.css.map": "/static/css/main.ee46fada.css.map",
+    "main.cc184ddd.js.map": "/static/js/main.cc184ddd.js.map"
   },
   "entrypoints": [
-    "static/css/main.f310eed9.css",
-    "static/js/main.5a167ade.js"
+    "static/css/main.ee46fada.css",
+    "static/js/main.cc184ddd.js"
   ]
 }
