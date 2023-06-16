@@ -41,11 +41,11 @@ export default function DoorstepPlan() {
   function hideBook1() {
     setShowModal1(false);
     setLoading(false);
-    setReady(null);
-    setVehicleNo(null);
-    setuVehicleName(null);
-    setServiceStart(null);
-    setVehiclecolor(null);
+    setReady("");
+    setVehicleNo("");
+    setuVehicleName("");
+    setServiceStart("");
+    setVehiclecolor("");
   }
 
 
@@ -70,6 +70,21 @@ export default function DoorstepPlan() {
     updateDoc(doc(db, collectionName, docId), data)
       .then(() => {
         console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  };
+  const RequestAdd1 = (collectionName, docId, data) => {
+    updateDoc(doc(db, collectionName, docId), data)
+      .then(() => {
+        console.log("Document successfully written!");
+        toast.success("Details saved..!");
+        setReady("");
+        setVehicleNo("");
+        setuVehicleName("");
+        setServiceStart("");
+        setVehiclecolor("");
       })
       .catch((error) => {
         console.error("Error writing document: ", error);
@@ -140,7 +155,7 @@ try {
   const checkEmpty = () => {
     preProcess();
     if (uVehicleName.length < 5 ) {
-      alert("Please write vaild Vehicle number !");
+      alert("Please write vaild Vehicle numbe !");
       return;
     }
     if (uVehicleNo.length < 5) {
@@ -172,7 +187,7 @@ try {
               readyBefore: uReady
             }
           };
-          RequestAdd("users", user.uid, data);
+          RequestAdd1("users", user.uid, data);
           // setFormR(true);
 
         } else {
@@ -294,6 +309,8 @@ try {
                 Ready Before Time:
               </label>
               <select className='input-timing' value={uReady} onChange={(e)=>{setReady(e.target.value)}}>
+    <option value="">select</option>
+                
     <option value="6 - 7 AM">6 - 7 AM</option>
     <option value="7 - 8 AM">7 - 8 AM</option>
     <option value="8 - 9 AM">8 - 9 AM</option>

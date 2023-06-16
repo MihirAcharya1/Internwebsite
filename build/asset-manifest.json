@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ee46fada.css",
-    "main.js": "/static/js/main.cc184ddd.js",
+    "main.js": "/static/js/main.21c220ec.js",
     "static/media/hybrid.jpg": "/static/media/hybrid.65b9ebdc7dcf86658d9c.jpg",
     "static/media/young-man-washing-car-carwash-station-outdoor.jpg": "/static/media/young-man-washing-car-carwash-station-outdoor.0c4021699273db3dd6c2.jpg",
     "static/media/woman-washing-her-car-outside1 - Copy.jpg": "/static/media/woman-washing-her-car-outside1 - Copy.d2283314bcbca4d86d1e.jpg",
@@ -28,10 +28,10 @@
     "static/media/LI.png": "/static/media/LI.1843e023cd3333def4c6.png",
     "index.html": "/index.html",
     "main.ee46fada.css.map": "/static/css/main.ee46fada.css.map",
-    "main.cc184ddd.js.map": "/static/js/main.cc184ddd.js.map"
+    "main.21c220ec.js.map": "/static/js/main.21c220ec.js.map"
   },
   "entrypoints": [
     "static/css/main.ee46fada.css",
-    "static/js/main.cc184ddd.js"
+    "static/js/main.21c220ec.js"
   ]
 }
